@@ -1,0 +1,1 @@
+<h2>Gestion des catégories de produits</h2>
