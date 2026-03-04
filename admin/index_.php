@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('src/php/utils/all_includes.php')
 ?>
 <!doctype html>
 <html lang="fr">
