@@ -2,7 +2,6 @@
 
 if(isset($_POST['submit']))
 {
-    // ✅ CORRIGÉ: Utiliser POST au lieu de GET (plus sûr)
     extract($_POST, EXTR_OVERWRITE);
     
     if(!empty($email) && !empty($mot_de_passe))
@@ -27,8 +26,6 @@ if(isset($_POST['submit']))
         $erreur = "Veuillez remplir tous les champs";
     }
 }
-
-
 
 ?>
 
