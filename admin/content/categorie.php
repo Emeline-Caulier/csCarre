@@ -1,8 +1,8 @@
 <h2>Gestion des catégories de produits</h2>
 <?php
 
-$types = new TypeDAO($cnx);
-$liste = $types->getAllTypes();
+$types = new CategorieDAO($cnx);
+$liste = $types->getAllCategories();
 ?>
 <pre>
     <?php

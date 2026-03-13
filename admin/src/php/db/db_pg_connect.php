@@ -1,4 +1,4 @@
 <?php
-$dsn = 'pgsql:host=localhost;dbname=patisserie2026;port=5432';
+$dsn = 'pgsql:host=localhost;dbname=cs2_ecommerce;port=5432';
 $user = 'anonyme';
 $pass = 'anonyme';

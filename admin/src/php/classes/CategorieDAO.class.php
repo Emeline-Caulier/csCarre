@@ -1,6 +1,6 @@
 <?php
 
-class TypeDAO
+class CategorieDAO
 {
     private PDO $_cnx;
 
@@ -9,18 +9,18 @@ class TypeDAO
         $this->_cnx = $_cnx;
     }
 
-    public function getAllTypes()
+    public function getAllCategories()
     {
-        $sql = "SELECT * FROM type";
+        $sql = "SELECT * FROM categorie";
         try {
             $stmt = $this->_cnx->prepare($sql);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             return array_map(function ($d) {
-                return new Type(
-                    id_type: (int)$d['id_type'],
-                    nom_type: (string)$d['nom_type']
+                return new Categorie(
+                    id_categorie: (int)$d['id_categorie'],
+                    nom_categorie: (string)$d['nom_categorie']
                 );
             }, $data);
         } catch (PDOException $e) {
@@ -29,18 +29,17 @@ class TypeDAO
         }
     }
 
-    public function getTypeById(int $id_type)
+    public function getCategorieById(int $id_categorie)
     {
         //A définir
     }
 
-    public function addType(string $nom_type)
+    public function addCategorie(string $nom_categorie)
     {
-
-        $query = "select ajout_type(:nom_type) as retour";
+        $query = "select ajout_categorie(:nom_categorie) as retour";
         try {
             $stmt = $this->_cnx->prepare($query);
-            $stmt->bindParam(":nom_type", $nom_type);
+            $stmt->bindParam(":nom_categorie", $nom_categorie);
             $stmt->execute();
             $retour = $stmt->fetchColumn(0);
             return $retour;
@@ -51,5 +50,3 @@ class TypeDAO
         }
     }
 }
-
-
