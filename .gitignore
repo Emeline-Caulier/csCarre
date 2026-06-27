@@ -1,0 +1,18 @@
+# Secrets
+*.env
+
+# IDE et outils
+.idea/
+*.iml
+.vscode/
+
+# Backups et dumps SQL
+backups/Dumps/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PHP
+vendor/
+composer.lock
